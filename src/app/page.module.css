@@ -1,9 +1,9 @@
 .main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  padding: 6rem;
+  padding: 1rem;
   min-height: 100vh;
 }
 
@@ -132,7 +132,7 @@
 
 /* Conic Gradient Animation */
 .thirteen::before {
-  animation: 6s rotate linear infinite;
+  animation: 4s rotate linear infinite;
   width: 200%;
   height: 200%;
   background: var(--tile-border);
@@ -141,7 +141,7 @@
 /* Inner Square */
 .thirteen::after {
   inset: 0;
-  padding: 1px;
+  padding: 0.3px;
   border-radius: var(--border-radius);
   background: linear-gradient(
     to bottom right,
