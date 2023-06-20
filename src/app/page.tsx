@@ -1,28 +1,33 @@
+import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import { Tilt_Prism } from "next/font/google";
-import { Bodoni_Moda } from "next/font/google";
-import { Oswald } from "next/font/google";
+// import { Bodoni_Moda } from "next/font/google";
+// import { Oswald } from "next/font/google";
 import Image from "next/image";
 import Man from "../man.jpg";
+import Header from "@/components/Header";
 
 // import styles from "./page.module.css";
-
+const vanillaRavioli = localFont({
+  src: "../fonts/VanillaRavioli.ttf",
+});
 const inter = Inter({ subsets: ["latin"] });
 const tiltPrism = Tilt_Prism({ subsets: ["latin"] });
-const cinzel = Bodoni_Moda({ subsets: ["latin"] });
-const oswald = Oswald({ subsets: ["latin"] });
+// const cinzel = Bodoni_Moda({ subsets: ["latin"] });
+// const oswald = Oswald({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <>
+      <Header />
       <main className="container">
         <div className="container py-5 px-5 mx-auto">
-          <div className={cinzel.className}>
-            <div style={{ fontSize: 50 }}>
+          <div className={vanillaRavioli.className}>
+            <div style={{ fontSize: 40, color: "green" }}>
               Why "The way of superior man" is a must read...
             </div>
 
-            <div className={oswald.className}>
+            <div className={inter.className}>
               <div style={{ fontSize: 30 }}>
                 We all know how men are becoming man-child nowadays.
               </div>
