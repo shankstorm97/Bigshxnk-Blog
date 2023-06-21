@@ -6,11 +6,16 @@ import { Tilt_Prism } from "next/font/google";
 import Image from "next/image";
 import Man from "../man.jpg";
 import Header from "@/components/Header";
+import ThemeButton from "@/components/ThemeButton";
 
 // import styles from "./page.module.css";
 const vanillaRavioli = localFont({
   src: "../fonts/VanillaRavioli.ttf",
 });
+const presicav = localFont({
+  src: "../fonts/PresicavRg-Bold.ttf",
+});
+
 const inter = Inter({ subsets: ["latin"] });
 const tiltPrism = Tilt_Prism({ subsets: ["latin"] });
 // const cinzel = Bodoni_Moda({ subsets: ["latin"] });
@@ -20,10 +25,11 @@ export default function Home() {
   return (
     <>
       <Header />
+      <ThemeButton />
       <main className="container">
         <div className="container py-5 px-5 mx-auto">
-          <div className={vanillaRavioli.className}>
-            <div style={{ fontSize: 40, color: "green" }}>
+          <div className={presicav.className}>
+            <div style={{ fontSize: 30, color: "black" }}>
               Why "The way of superior man" is a must read...
             </div>
 
