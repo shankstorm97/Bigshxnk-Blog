@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <Header />
       <ThemeButton />
-      <main className="container">
+      {/* <main className="container">
         <div className="container py-5 px-5 mx-auto">
           <div className={presicav.className}>
             <div style={{ fontSize: 30, color: "black" }}>
@@ -47,8 +47,8 @@ export default function Home() {
         alt="Man"
         width={2000}
         style={{ borderRadius: 20 }}
-        className="flex container mx-auto"
-      />
+        className="flex container mx-auto rounded-lg"
+      /> */}
     </>
   );
 }

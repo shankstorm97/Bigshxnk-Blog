@@ -20,30 +20,62 @@ function Header() {
     tl.from(subscribe.current, {
       duration: 1,
       opacity: 0,
-      y: 5,
+      y: -10,
     });
     console.log(subscribe.current);
   }, []);
 
   return (
     <main className="border-b border-black ">
-      <header className="flex container mx-auto mt-2 justify-between">
-        <Link
-          href="/subscribe"
-          className={presicav.className}
-          style={{ fontSize: 25 }}
-          ref={subscribe}
+      <header className="flex container mx-auto mt">
+        <div
+          style={{
+            fontSize: 16,
+            flex: "1",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "left",
+          }}
         >
-          Subscribe
-        </Link>
-        <Link href="/">Logo</Link>
-        <button
-          className={presicav.className}
-          style={{ fontSize: 25 }}
-          ref={menu}
+          <Link
+            href="/subscribe"
+            className={presicav.className}
+            ref={subscribe}
+          >
+            Subscribe
+          </Link>
+        </div>
+
+        <div
+          style={{
+            fontSize: 30,
+            flex: "1",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          Menu
-        </button>
+          <Link
+            href="/subscribe"
+            className={vanillaRavioli.className}
+            ref={subscribe}
+          >
+            SociousE
+          </Link>
+        </div>
+        <div
+          style={{
+            fontSize: 16,
+            flex: "1",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "right",
+          }}
+        >
+          <button className={presicav.className} ref={menu}>
+            Menu
+          </button>
+        </div>
       </header>
     </main>
   );
