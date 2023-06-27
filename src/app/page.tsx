@@ -7,6 +7,7 @@ import Image from "next/image";
 import Man from "../man.jpg";
 import Header from "@/components/Header";
 import ThemeButton from "@/components/ThemeButton";
+import { client } from "../lib/contentful/client";
 
 // import styles from "./page.module.css";
 const vanillaRavioli = localFont({
@@ -21,7 +22,11 @@ const tiltPrism = Tilt_Prism({ subsets: ["latin"] });
 // const cinzel = Bodoni_Moda({ subsets: ["latin"] });
 // const oswald = Oswald({ subsets: ["latin"] });
 
-export default function Home() {
+export default async function Home() {
+  const entries = await client.getEntries({ content_type: "post" });
+  // const entries = await client.getEntries();
+  // console.log(entries.items[0].fields.title);
+  console.log(entries);
   return (
     <>
       <Header />

@@ -26,8 +26,8 @@ function Header() {
   }, []);
 
   return (
-    <main className="border-b border-black ">
-      <header className="flex container mx-auto mt">
+    <main className="border-b-s">
+      <header className="flex container mx-auto mt px-2">
         <div
           style={{
             fontSize: 16,
@@ -55,11 +55,7 @@ function Header() {
             justifyContent: "center",
           }}
         >
-          <Link
-            href="/subscribe"
-            className={vanillaRavioli.className}
-            ref={subscribe}
-          >
+          <Link href="/" className={vanillaRavioli.className} ref={subscribe}>
             SociousE
           </Link>
         </div>
