@@ -1,5 +1,7 @@
 import Providers from "@/lib/utils/Providers";
 import "./globals.css";
+import Header from "@/components/Header";
+import ThemeButton from "@/components/ThemeButton";
 
 export const metadata = {
   title: "Create Next App",
@@ -14,7 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Providers>{children}</Providers>
+        <main>
+          <Header />
+          {/* <ThemeButton /> */}
+          <Providers>{children}</Providers>
+        </main>
       </body>
     </html>
   );
