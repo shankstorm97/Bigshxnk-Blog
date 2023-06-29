@@ -8,7 +8,12 @@ import Man from "../man.jpg";
 import Header from "@/components/Header";
 import ThemeButton from "@/components/ThemeButton";
 import { client } from "../lib/contentful/client";
-import { getAllPosts, getAllTags } from "@/lib/contentful/functions";
+import {
+  getAllPosts,
+  getAllTags,
+  getPostsByTag,
+} from "@/lib/contentful/functions";
+import TagSearch from "@/components/TagSearch";
 
 // import styles from "./page.module.css";
 const vanillaRavioli = localFont({
@@ -58,7 +63,7 @@ export default async function Home() {
   const dataTags = await getAllTags();
   const indTag = await dataTags.data.items;
 
-  console.log(indTag);
+  // console.log(indTag);
 
   // console.log(dataTags.data.items[0].name);
   // console.log(allPosts.items[0].metadata.tags);
@@ -66,9 +71,12 @@ export default async function Home() {
   return (
     <>
       <ThemeButton />
-      {indTag.map((tag: Tag, id: number) => {
-        return <h2 key={id}>{tag.name}</h2>;
-      })}
+      {/* {indTag.map((tag: Tag, id: string) => (
+        <button key={tag.sys.id}>{tag.name}</button>
+      ))} */}
+      {/* <TagSearch></TagSearch> */}
+      <TagSearch />
+
       {/* <main className="container">
         <div className="container py-5 px-5 mx-auto">
           <div className={presicav.className}>
