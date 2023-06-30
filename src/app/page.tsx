@@ -47,59 +47,9 @@ interface Tag {
 }
 
 export default async function Home() {
-  // const entries = await client.getEntries({
-  // content_type: "post",
-  // "metadata.tags[0].sys.id": "lookGood",
-  // "sys.id": "6oiny3Zl1UetOsxXfDTJYL",
-  // "tags.sys.id": "lookGood",
-  // "fields.title": "my second post",
-  // "fields": "my-second-post",
-  // });
-  // const entries = await client.getEntries({});
-  // console.log(entries);
-
-  // const allPosts = await getAllPosts();
-
-  const dataTags = await getAllTags();
-  const indTag = await dataTags.data.items;
-
-  // console.log(indTag);
-
-  // console.log(dataTags.data.items[0].name);
-  // console.log(allPosts.items[0].metadata.tags);
-
   return (
-    <>
+    <div style={{ height: "2000px" }}>
       <ThemeButton />
-      {/* {indTag.map((tag: Tag, id: string) => (
-        <button key={tag.sys.id}>{tag.name}</button>
-      ))} */}
-      {/* <TagSearch></TagSearch> */}
-      <TagSearch />
-
-      {/* <main className="container">
-        <div className="container py-5 px-5 mx-auto">
-          <div className={presicav.className}>
-            <div style={{ fontSize: 30, color: "black" }}>
-              Why "The way of superior man" is a must read...
-            </div>
-
-            <div className={inter.className}>
-              <div style={{ fontSize: 30 }}>
-                We all know how men are becoming man-child nowadays.
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <Image
-        src={Man}
-        height={2000}
-        alt="Man"
-        width={2000}
-        style={{ borderRadius: 20 }}
-        className="flex container mx-auto rounded-lg"
-      /> */}
-    </>
+    </div>
   );
 }

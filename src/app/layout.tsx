@@ -2,6 +2,7 @@ import Providers from "@/lib/utils/Providers";
 import "./globals.css";
 import Header from "@/components/Header";
 import ThemeButton from "@/components/ThemeButton";
+import TagSearch from "@/components/TagSearch";
 
 export const metadata = {
   title: "Create Next App",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <main>
           <Header />
+          <TagSearch />
           {/* <ThemeButton /> */}
           <Providers>{children}</Providers>
         </main>

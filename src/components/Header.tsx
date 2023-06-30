@@ -26,7 +26,7 @@ function Header() {
   }, []);
 
   return (
-    <main className="border-b-s">
+    <main className="border-b max-w-7xl m-auto">
       <header className="flex container mx-auto mt px-2">
         <div
           style={{

@@ -1,57 +1,72 @@
 "use client";
-import { useEffect } from "react";
-import { getAllPosts, getAllTags } from "@/lib/contentful/functions";
-// interface Sys {
-//   space: object;
-//   id: string;
-//   type: string;
-//   createdAt: string;
-//   updatedAt: string;
-//   environment: object;
-//   createdBy: object;
-//   updatedBy: object;
-//   version: number;
-//   visibility: string;
-// }
+import { getAllTags } from "@/lib/contentful/functions";
 
-// interface Tag {
-//   sys: Sys;
-//   name: string;
-//   key: number;
-// }
+interface Sys {
+  type: string;
+  space?: {
+    sys: {
+      type: string;
+      linkType: string;
+      id: string;
+    };
+  };
+  id?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  environment?: {
+    sys: {
+      id: string;
+      type: string;
+      linkType: string;
+    };
+  };
+  createdBy?: {
+    sys: {
+      type: string;
+      linkType: string;
+      id: string;
+    };
+  };
+  updatedBy?: {
+    sys: {
+      type: string;
+      linkType: string;
+      id: string;
+    };
+  };
+  version?: number;
+  visibility?: string;
+}
 
-// const getTags = async () => {
-//   const response = await axios.get(
-//     `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}/environments/master/tags?access_token=${process.env.ACCESS_TOKEN}`
-//   );
+interface Item {
+  sys: Sys;
+  name: string;
+}
 
-//   return response;
-// };
-
-// import React from "react";
-
-// export default async function TagSearch() {
-//   return <div>2sad</div>;
-// }
+interface Data {
+  sys: {
+    type: string;
+  };
+  total: number;
+  skip: number;
+  limit: number;
+  items: Item[];
+}
 
 const TagSearch = async () => {
-  const dataTags = await getAllTags();
-  // console.log(dataTags);
-  // const response = await dataTags.then((item) => {
-  //   return item;
-  // });
-  // console.log(dataTags.data.items[0].sys.id);
-
-  // const dataTags = await fetch(
-  //   "https://cdn.contentful.com/spaces/deu01t0679sh/environments/master/tags?access_token=2ceDQK24UOk1KFoo4nSBCZb-cpqzO6VynPdJDHAIHBg"
-  // );
-
-  // const response = await dataTags.json();
-  // const tagData = await getAllTags();
-  // const tagData = await getPostsByTag();
-  // const indTag = await dataTags.data.items;
-
-  return <div>{dataTags.data.items[0].sys.id}</div>;
+  const { data } = await getAllTags();
+  return (
+    <div className="fixed bottom-6 w-full">
+      <div className=" text-l blur-0 border-b m-auto flex justify-center w-1/2 pb-1 font-bold">
+        {/* <div className="tagSearch"> */}
+        {data.items.map((tagName: Item) => (
+          <p key={tagName.sys.id} className="mr-2 uppercase">
+            {tagName.name}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default TagSearch;
