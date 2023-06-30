@@ -109,17 +109,9 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-.tagDiv {
-  position: absolute;
-  bottom: 8;
+
+.centered {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
-.tagSearch {
-  position: sticky;
-  top: 0;
-  /* bottom: 0;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-/* } */

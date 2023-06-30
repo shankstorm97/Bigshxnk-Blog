@@ -14,6 +14,7 @@ import {
   getPostsByTag,
 } from "@/lib/contentful/functions";
 import TagSearch from "@/components/TagSearch";
+import { gsap } from "gsap";
 
 // import styles from "./page.module.css";
 const vanillaRavioli = localFont({
@@ -46,10 +47,13 @@ interface Tag {
   name: string;
 }
 
+
 export default async function Home() {
   return (
-    <div style={{ height: "2000px" }}>
-      <ThemeButton />
-    </div>
+    <>
+      <div style={{ height: "2000px" }}>
+        <ThemeButton />
+      </div>
+    </>
   );
 }

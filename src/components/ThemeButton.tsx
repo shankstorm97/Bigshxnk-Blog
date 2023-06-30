@@ -17,14 +17,14 @@ const ThemeButton = () => {
   return (
     <button
       aria-label="Toggle Dark Mode"
-      className="absolute p-2 right-0"
+      className="fixed p-2 bottom-6 left-24"
       style={{ margin: "auto" }}
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {resolvedTheme === "dark" ? (
-        <SunIcon className="h-5 w-5 text-orange-300" />
+        <SunIcon className="h-6 w-6 text-orange-300" />
       ) : (
-        <MoonIcon className="h-5 w-5 text-slate-900" />
+        <MoonIcon className="h-6 w-6 text-slate-900" />
       )}
     </button>
   );

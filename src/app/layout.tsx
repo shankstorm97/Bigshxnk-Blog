@@ -18,10 +18,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <main>
+          {/* <div className="smooth-wrapper"> */}
+          {/* <div className="smooth-content"> */}
           <Header />
           <TagSearch />
           {/* <ThemeButton /> */}
           <Providers>{children}</Providers>
+          {/* </div> */}
+          {/* </div> */}
         </main>
       </body>
     </html>

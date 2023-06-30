@@ -1,6 +1,10 @@
 "use client";
 import { getAllTags } from "@/lib/contentful/functions";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
+gsap.registerPlugin(ScrollTrigger);
 interface Sys {
   type: string;
   space?: {
@@ -54,18 +58,41 @@ interface Data {
 }
 
 const TagSearch = async () => {
+  const wrapperRef = useRef(null);
+  const contentRef = useRef(null);
   const { data } = await getAllTags();
+  gsap.to(wrapperRef.current, {
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+      trigger: contentRef.current,
+    },
+  });
+
   return (
-    <div className="fixed bottom-6 w-full">
-      <div className=" text-l blur-0 border-b m-auto flex justify-center w-1/2 pb-1 font-bold">
-        {/* <div className="tagSearch"> */}
-        {data.items.map((tagName: Item) => (
-          <p key={tagName.sys.id} className="mr-2 uppercase">
-            {tagName.name}
-          </p>
-        ))}
+    <>
+      <div className="centered bottom-6 backdrop-blur-xl w-8/12">
+        <div className=" text-l blur-0 border-b m-auto flex justify-center w-1/2 pb-1 font-bold ">
+          {data.items.map((tagName: Item) => (
+            <p key={tagName.sys.id} className="mr-2 uppercase">
+              {tagName.name}
+            </p>
+          ))}
+        </div>
       </div>
-    </div>
+      <div className="smooth-wrapper" ref={wrapperRef}>
+        <div className="smooth-content" ref={contentRef}>
+          <ul>
+            <li>12</li>
+            <li>3</li>
+            <li>5</li>
+            <li>86</li>
+            <li>86</li>
+            <li>5423</li>
+          </ul>
+        </div>
+      </div>
+    </>
   );
 };
 
