@@ -2,7 +2,6 @@
 import { getAllTags } from "@/lib/contentful/functions";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 interface Sys {
@@ -58,16 +57,7 @@ interface Data {
 }
 
 const TagSearch = async () => {
-  const wrapperRef = useRef(null);
-  const contentRef = useRef(null);
   const { data } = await getAllTags();
-  gsap.to(wrapperRef.current, {
-    y: 200,
-    duration: 1,
-    scrollTrigger: {
-      trigger: contentRef.current,
-    },
-  });
 
   return (
     <>
@@ -78,18 +68,6 @@ const TagSearch = async () => {
               {tagName.name}
             </p>
           ))}
-        </div>
-      </div>
-      <div className="smooth-wrapper" ref={wrapperRef}>
-        <div className="smooth-content" ref={contentRef}>
-          <ul>
-            <li>12</li>
-            <li>3</li>
-            <li>5</li>
-            <li>86</li>
-            <li>86</li>
-            <li>5423</li>
-          </ul>
         </div>
       </div>
     </>

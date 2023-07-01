@@ -47,12 +47,14 @@ interface Tag {
   name: string;
 }
 
-
 export default async function Home() {
+  const getPosts = await getAllPosts();
+  console.log(getPosts.items);
   return (
     <>
-      <div style={{ height: "2000px" }}>
-        <ThemeButton />
+      <ThemeButton />
+      <div className="landing-page">
+        <div className="">BLOG OF THE DAY</div>
       </div>
     </>
   );

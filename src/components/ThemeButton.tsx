@@ -17,7 +17,7 @@ const ThemeButton = () => {
   return (
     <button
       aria-label="Toggle Dark Mode"
-      className="fixed p-2 bottom-6 left-24"
+      className="fixed p-2 bottom-5 left-24"
       style={{ margin: "auto" }}
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
