@@ -3,17 +3,10 @@ import { Inter } from "next/font/google";
 import { Tilt_Prism } from "next/font/google";
 // import { Bodoni_Moda } from "next/font/google";
 // import { Oswald } from "next/font/google";
-import Image from "next/image";
 import Man from "../man.jpg";
-import Header from "@/components/Header";
 import ThemeButton from "@/components/ThemeButton";
 import { client } from "../lib/contentful/client";
-import {
-  getAllPosts,
-  getAllTags,
-  getPostsByTag,
-} from "@/lib/contentful/functions";
-import TagSearch from "@/components/TagSearch";
+import { getAllPosts } from "@/lib/contentful/functions";
 import { gsap } from "gsap";
 
 // import styles from "./page.module.css";
@@ -53,8 +46,8 @@ export default async function Home() {
   return (
     <>
       <ThemeButton />
-      <div className="landing-page">
-        <div className="">BLOG OF THE DAY</div>
+      <div className="landing-page flex justify-center align-middle">
+        <div className="text-9xl pt-2 ">BLOG OF THE DAY</div>
       </div>
     </>
   );
