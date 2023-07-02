@@ -47,7 +47,7 @@ export default async function Home() {
     <>
       <ThemeButton />
       <div className="landing-page flex justify-center align-middle">
-        <div className="text-9xl pt-2 ">BLOG OF THE DAY</div>
+        <div className="text-9xl pt-2 ">BLOG OF THE WEEK</div>
       </div>
     </>
   );
