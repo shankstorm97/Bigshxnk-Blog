@@ -10,8 +10,15 @@ export const getAllPosts = async () => {
 
 export const getSingleEntry = async (entryId: string) => {
   const response = await fetch(
-    // `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}/environments/master/entries/${entryId}?access_token=${process.env.ACCESS_TOKEN}&content_type=author`
     `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}/environments/master/entries/${entryId}?access_token=${process.env.ACCESS_TOKEN}`
+  );
+  const data = await response.json();
+  return data;
+};
+
+export const getSingleAsset = async (assetId: string) => {
+  const response = await fetch(
+    `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}/environments/master/assets/${assetId}?access_token=${process.env.ACCESS_TOKEN}`
   );
   const data = await response.json();
   return data;
