@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import { Tilt_Prism } from "next/font/google";
-// import { Bodoni_Moda } from "next/font/google";
+import { Bodoni_Moda } from "next/font/google";
 // import { Oswald } from "next/font/google";
 import Man from "../man.jpg";
 import ThemeButton from "@/components/ThemeButton";
@@ -26,7 +26,7 @@ const presicav = localFont({
 
 const inter = Inter({ subsets: ["latin"] });
 const tiltPrism = Tilt_Prism({ subsets: ["latin"] });
-// const cinzel = Bodoni_Moda({ subsets: ["latin"] });
+const cinzel = Bodoni_Moda({ subsets: ["latin"] });
 // const oswald = Oswald({ subsets: ["latin"] });
 
 export default async function Home() {
@@ -46,16 +46,25 @@ export default async function Home() {
     <>
       <ThemeButton />
       <div className="landing-page flex justify-center align-middle">
-        <h1 className="text-9xl pt-2 ">BEST OF THE WEEK</h1>
+        <h1 className="lg:text-8xl text-center md:text-7xl sm:text-6xl xl:text-9xl xs:text-4xl xxs:text-2xl">
+          BEST OF THE WEEK
+        </h1>
       </div>
-      <div className="h-[44rem] w-full m-auto flex justify-center align-middle bg-gradient-to-b from-white to-neutral-600 mt-4">
-        <Image
-          src={`https:${coverImageUrl}`}
-          alt="Blog-of-the-week-image"
-          width={1000}
-          height={1000}
-        />
-        <div>{title}</div>
+      <div className="h-full w-full m-auto flex justify-center align-middle bg-gradient-to-b from-white to-neutral-600">
+        <div className="relative h-full">
+          <Image
+            src={`https:${coverImageUrl}`}
+            alt="Blog-of-the-week-image"
+            width={1200}
+            height={1200}
+            className="rounded-2xl"
+          />
+          <div className=" absolute top-1/3 left-3/6 w-full ">
+            <h2 className="lg:text-6xl text-center md:text-4xl sm:text-2xl">
+              {title}
+            </h2>
+          </div>
+        </div>
       </div>
 
       {/* {postItems.map((items: Entry) => {

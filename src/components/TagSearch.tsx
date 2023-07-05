@@ -61,7 +61,7 @@ const TagSearch = async () => {
 
   return (
     <>
-      <div className="centered bottom-6 backdrop-blur-xl w-8/12">
+      <div className="centered bottom-6 backdrop-blur-xl w-8/12 z-20">
         <div className=" text-l blur-0 border-b m-auto flex justify-center w-1/2 pb-1 font-bold ">
           {data.items.map((tagName: Item) => (
             <p key={tagName.sys.id} className="mr-2 uppercase">
