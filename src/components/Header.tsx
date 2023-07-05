@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useRef, useEffect } from "react";
 import localFont from "next/font/local";
 import { gsap } from "gsap";
+
 import ThemeButton from "./ThemeButton";
 
 const vanillaRavioli = localFont({

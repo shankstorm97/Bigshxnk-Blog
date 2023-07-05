@@ -115,3 +115,7 @@ a {
   left: 50%;
   transform: translate(-50%, 0);
 }
+
+.myTitle {
+  opacity: 0;
+}

@@ -1,9 +1,6 @@
 "use client";
 import { getAllTags } from "@/lib/contentful/functions";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
 interface Sys {
   type: string;
   space?: {
