@@ -9,10 +9,11 @@ const PostCard = async (items: Entry) => {
   // const assetItems = await getSingleAsset(`${coverImage}`);
   const assetItems = await getSingleAsset(`${coverImage.sys.id}`);
   const coverImageUrl = assetItems.fields.file.url;
-  console.log(coverImageUrl);
+  // console.log(coverImageUrl);
   return (
     <>
-      <h1>{title}</h1>
+    
+      {/* <h1>{title}</h1>
       <h2>{slug}</h2>
       <h3>{excerpt}</h3>
       <h2>{authorItems.fields.name}</h2>
@@ -20,7 +21,7 @@ const PostCard = async (items: Entry) => {
         src={`https:${coverImageUrl}`}
         alt=""
         style={{ height: "450px", width: "450px" }}
-      />
+      /> */}
     </>
   );
 };

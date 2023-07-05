@@ -9,6 +9,7 @@ import { client } from "../lib/contentful/client";
 import { getAllPosts } from "@/lib/contentful/functions";
 import { gsap } from "gsap";
 import PostCard from "@/components/PostCard";
+import ReactSimplyCarouselExample from "@/components/ReactSimplyCarousel";
 
 // import styles from "./page.module.css";
 const vanillaRavioli = localFont({
@@ -26,16 +27,18 @@ const tiltPrism = Tilt_Prism({ subsets: ["latin"] });
 export default async function Home() {
   const getPosts = await getAllPosts();
   const postItems = getPosts.items;
+  // console.log(getPosts.items[1].fields);
 
   return (
     <>
       <ThemeButton />
       <div className="landing-page flex justify-center align-middle">
-        <h1 className="text-9xl pt-2 ">BLOG OF THE WEEK</h1>
+        <h1 className="text-9xl pt-2 ">BEST OF THE WEEK</h1>
       </div>
       {postItems.map((items: Entry) => {
         return <PostCard {...items} />;
       })}
+      {/* <ReactSimplyCarouselExample /> */}
     </>
   );
 }
