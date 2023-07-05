@@ -6,10 +6,15 @@ import { Tilt_Prism } from "next/font/google";
 import Man from "../man.jpg";
 import ThemeButton from "@/components/ThemeButton";
 import { client } from "../lib/contentful/client";
-import { getAllPosts } from "@/lib/contentful/functions";
+import {
+  getAllPosts,
+  getPostsByTag,
+  getSingleAsset,
+  getSingleEntry,
+} from "@/lib/contentful/functions";
 import { gsap } from "gsap";
 import PostCard from "@/components/PostCard";
-import ReactSimplyCarouselExample from "@/components/ReactSimplyCarousel";
+import Image from "next/image";
 
 // import styles from "./page.module.css";
 const vanillaRavioli = localFont({
@@ -27,7 +32,15 @@ const tiltPrism = Tilt_Prism({ subsets: ["latin"] });
 export default async function Home() {
   const getPosts = await getAllPosts();
   const postItems = getPosts.items;
-  // console.log(getPosts.items[1].fields);
+  // console.log(getPosts.items[0].fields);
+  const weeklyBlogData = await getPostsByTag("blogOfTheWeek");
+  // console.log(weeklyBlogData.items[0].fields);
+  const assetItems = await getSingleAsset(
+    `${weeklyBlogData.items[0].fields.coverImage.sys.id}`
+  );
+  // console.log(weeklyBlogData.items[0].fields.coverImage.sys.id);
+  const coverImageUrl = assetItems.fields.file.url;
+  const { title } = weeklyBlogData.items[0].fields;
 
   return (
     <>
@@ -35,10 +48,19 @@ export default async function Home() {
       <div className="landing-page flex justify-center align-middle">
         <h1 className="text-9xl pt-2 ">BEST OF THE WEEK</h1>
       </div>
-      {postItems.map((items: Entry) => {
+      <div className="h-[44rem] w-full m-auto flex justify-center align-middle bg-gradient-to-b from-white to-neutral-600 mt-4">
+        <Image
+          src={`https:${coverImageUrl}`}
+          alt="Blog-of-the-week-image"
+          width={1000}
+          height={1000}
+        />
+        <div>{title}</div>
+      </div>
+
+      {/* {postItems.map((items: Entry) => {
         return <PostCard {...items} />;
-      })}
-      {/* <ReactSimplyCarouselExample /> */}
+      })} */}
     </>
   );
 }
