@@ -16,7 +16,6 @@ import {
 import PostCard from "@/components/PostCard";
 import Image from "next/image";
 import { gsap } from "gsap";
-import { SplitText } from "gsap-trial/SplitText";
 
 // import styles from "./page.module.css";
 const vanillaRavioli = localFont({
@@ -43,9 +42,6 @@ export default async function Home() {
   // console.log(weeklyBlogData.items[0].fields.coverImage.sys.id);
   const coverImageUrl = assetItems.fields.file.url;
   const { title } = weeklyBlogData.items[0].fields;
-  // const myTitleRef = useRef(null);
-
-  // gsap.to(myTitleRef.current, { y: -100, opacity: 1, duration: 2 });
 
   return (
     <>
@@ -56,16 +52,19 @@ export default async function Home() {
         </h1>
       </div>
       <div className="h-full w-full m-auto flex justify-center align-middle bg-gradient-to-b from-white to-neutral-600 hover:text-white text-neutral-900">
-        <div className="relative h-full grayscale hover:grayscale-0 transition ease-in-out duration-500 ">
+        <div className="relative h-full grayscale hover:grayscale-0 transition ease-in-out duration-500 overflow-hidden rounded-2xl">
           <Image
             src={`https:${coverImageUrl}`}
             alt="Blog-of-the-week-image"
             width={1200}
             height={1200}
-            className="rounded-2xl "
+            className="rounded-2xl  hover:scale-110  duration-700 transition ease-in-out"
           />
-          <div className=" absolute top-1/3 left-3/6 w-full">
-            <h2 className="lg:text-7xl text-center md:text-4xl sm:text-2xl">
+          <div className="absolute top-1/3 left-3/6 w-full">
+            <h2
+              id="myTitleRef"
+              className="lg:text-7xl text-center md:text-4xl sm:text-2xl"
+            >
               {title}
             </h2>
             {/* Need to make components of all animated effects  */}
@@ -76,6 +75,15 @@ export default async function Home() {
       {/* {postItems.map((items: Entry) => {
         return <PostCard {...items} />;
       })} */}
+
+      <div className="h-[64rem] flex justify-center align-middle ">
+        <div className=" mt-10 w-1/2 h-1/2  bg-gradient-to-r from-blue-200 to-neutral-300 rounded-3xl relative">
+          <h2 className="absolute top-2 text-3xl bg-orange-300 rounded-md w-3/4 h-fit ltr:text-left left-4 text-left line-clamp-3 tracking-wide">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
+            tempore voluptatibus porro
+          </h2>
+        </div>
+      </div>
     </>
   );
 }
