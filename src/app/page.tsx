@@ -16,6 +16,7 @@ import {
 import PostCard from "@/components/PostCard";
 import Image from "next/image";
 import { gsap } from "gsap";
+import HeroCardBig from "@/components/landingPageComponents/HeroCardBig";
 
 // import styles from "./page.module.css";
 const vanillaRavioli = localFont({
@@ -52,7 +53,7 @@ export default async function Home() {
         </h1>
       </div>
       <div className="h-full w-full m-auto flex justify-center align-middle bg-gradient-to-b from-white to-neutral-600 hover:text-white text-neutral-900">
-        <div className="relative h-full grayscale hover:grayscale-0 transition ease-in-out duration-500 overflow-hidden rounded-2xl">
+        <div className="relative mb-36 h-full grayscale hover:grayscale-0 transition ease-in-out duration-500 overflow-hidden rounded-2xl">
           <Image
             src={`https:${coverImageUrl}`}
             alt="Blog-of-the-week-image"
@@ -76,14 +77,16 @@ export default async function Home() {
         return <PostCard {...items} />;
       })} */}
 
-      <div className="h-[64rem] flex justify-center align-middle ">
-        <div className=" mt-10 w-1/2 h-1/2  bg-gradient-to-r from-blue-200 to-neutral-300 rounded-3xl relative">
-          <h2 className="absolute top-2 text-3xl bg-orange-300 rounded-md w-3/4 h-fit ltr:text-left left-4 text-left line-clamp-3 tracking-wide">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
-            tempore voluptatibus porro
-          </h2>
-        </div>
-      </div>
+      {/* <div className="h-[64rem] w-full m-auto bg-gradient-to-b from-neutral-600 to-black"> */}
+      {/* <div className="max-w-[95%] bg-neutral-500 m-auto w-full h-full flex"> */}
+      {/* <div className="rounded-3xl max-w-7xl bg-slate-200 relative">
+            <h2 className="absolute top-2 text-3xl bg-orange-300 rounded-md w-3/4 h-fit ltr:text-left left-4 text-left line-clamp-3 tracking-wide">
+              {title}
+            </h2>
+          </div> */}
+      <HeroCardBig />
+      {/* </div> */}
+      {/* </div> */}
     </>
   );
 }

@@ -23,7 +23,7 @@ function Header() {
       opacity: 0,
       y: -10,
     });
-    console.log(subscribe.current);
+    // console.log(subscribe.current);
   }, []);
 
   return (
