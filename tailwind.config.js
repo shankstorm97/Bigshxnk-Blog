@@ -29,7 +29,11 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
       // ...defaultTheme.screens,
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        heroCardBig: "-20px 0 0 0 #ffffff ",
+      },
+    },
   },
   plugins: [],
 };

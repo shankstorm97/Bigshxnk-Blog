@@ -4,10 +4,10 @@ export const getAllPosts = async () => {
   const response = await fetch(
     `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}/environments/master/entries?access_token=${process.env.ACCESS_TOKEN}&content_type=post`,
     {
-      next: {
-        revalidate: 60,
-      },
-      // cache: "no-cache",
+      // next: {
+      //   revalidate: 60,
+      // },
+      cache: "no-cache",
     }
   );
   const data = await response.json();
