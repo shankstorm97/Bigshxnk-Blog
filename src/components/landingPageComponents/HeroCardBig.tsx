@@ -25,28 +25,45 @@ const HeroCardBig = () => {
 
   return (
     <>
-      <div className="h-[64rem] w-full m-auto bg-gradient-to-b from-neutral-600 to-black">
-        <div className="max-w-[95%] w-1/2 bg-neutral-500 m-auto h-1/2 rounded-2xl">
-          <div className="relative h-full w-full">
+      {/* <div className="h-[64rem] w-full m-auto bg-gradient-to-b from-neutral-600 to-black flex box-border"> */}
+      <div className="h-[64rem] w-full m-auto bg-white flex box-border">
+        <div className="max-w-[95%] w-full bg-white h-2/3 rounded-2xl basis-3/5 p-4 m-0 box-border">
+          <div className="relative h-full w-full bg-gray-900 box-border rounded-[15px]">
             <Image
               src={Lamp}
-              alt="Blog-of-the-week-image"
+              alt="lamp-image"
               width={1200}
               height={1200}
-              className="h-full w-full rounded-2xl absolute top-0"
+              className=" absolute top-0 h-full w-full rounded-[15px] opacity-30 hover:opacity-100"
             />
-            {/* <div className="h-full w-full rounded-2xl absolute top-0 bg-red-600"></div> */}
-            <div className="flex">
-              <h1
-                ref={heroCardBigRef}
-                className="px-4 absolute top-0 bg-white w-fit text-xl rounded-br-2xl after:content-[''] after:absolute after:left-[100%] after:h-full after:rounded-tl-2xl after:shadow-heroCardBig after:w-full"
-              >
-                This is the reference heading.
-              </h1>
-              {/* <div className="px-4 absolute left-[47%] top-0 w-1/2 rounded-tl-3xl z-30">
-                asd
-              </div> */}
+            <div
+              ref={heroCardBigRef}
+              className="flex justify-start align-middle z-10 pr-4 pl-4 bg-white rounded-br-[15px] w-fit text-4xl after:content-[''] after:absolute after:left-[100%] after:h-1/2 after:rounded-tl-2xl after:shadow-heroCardBigAfter after:w-full box-border after:z-40 h-fit min-w-[40%] absolute top-0 m-auto"
+            >
+              <div className="flex justify-start align-bottom">
+                My name is prabhdeep singh
+              </div>
             </div>
+            <div
+              ref={heroCardBigRef}
+              className="flex justify-start align-middle z-10 pr-4 pl-4 bg-white rounded-br-[15px] w-fit text-4xl after:content-[''] after:absolute after:left-[100%] after:h-1/2 after:rounded-tl-2xl after:shadow-heroCardBigAfter after:w-full box-border after:z-40  absolute top-10 h-10"
+            >
+              <div className="flex justify-start align-bottom">
+                Prabhdeep singh
+              </div>
+            </div>
+            <div
+              ref={heroCardBigRef}
+              className="flex justify-start align-middle z-10 pr-4 pl-4 bg-white rounded-br-[15px] w-fit text-4xl after:content-[''] after:absolute after:left-[100%] after:h-1/2 after:rounded-tl-2xl after:shadow-heroCardBigAfter after:w-full box-border after:z-40 h-10  absolute top-[5rem]"
+            >
+              <div className="flex justify-start align-bottom">Prabhdeep</div>
+            </div>
+          </div>
+        </div>
+        <div className="basis-2/5">
+          <div className="relative h-full w-ful">
+            <div className=" basis-1/2 w-full bg-slate-200">asd</div>
+            <div className=" basis-1/2 w-full  bg-slate-500">bcs</div>
           </div>
         </div>
       </div>

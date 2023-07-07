@@ -31,7 +31,10 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        heroCardBig: "-20px 0 0 0 #ffffff ",
+        heroCardBigAfter: "-15px 0 0 0 #ffffff",
+        // heroCardBigAfter: "-15px 0 0 0 #ff0000 ",
+        heroCardBigBefore: "15px 0 0 0 #ffffff ",
+        // heroCardBigBefore: "15px 0 0 0 #000000 ",
       },
     },
   },
