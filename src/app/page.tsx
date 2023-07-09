@@ -52,14 +52,14 @@ export default async function Home() {
           BLOG OF THE WEEK
         </h1>
       </div>
-      <div className="h-full w-full m-auto flex justify-center align-middle bg-gradient-to-b from-white to-neutral-600 hover:text-white text-neutral-900">
+      <div className="h-full w-full m-auto flex justify-center align-middle bg-gradient-to-b from-white to-neutral-300 hover:text-white text-neutral-900 rounded-b-sm">
         <div className="relative mb-36 h-full grayscale hover:grayscale-0 transition ease-in-out duration-500 overflow-hidden rounded-2xl">
           <Image
             src={`https:${coverImageUrl}`}
             alt="Blog-of-the-week-image"
             width={1200}
             height={1200}
-            className="rounded-2xl  hover:scale-110  duration-700 transition ease-in-out"
+            className="rounded-2xl  hover:scale-110  duration-700 transition ease-in-out object-contain "
           />
           <div className="absolute top-1/3 left-3/6 w-full">
             <h2
