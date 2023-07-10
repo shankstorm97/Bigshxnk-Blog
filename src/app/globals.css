@@ -119,3 +119,16 @@ a {
 .myTitle {
   opacity: 0;
 }
+
+.beforeClass::before {
+  /* before:content-[''] before:absolute before::top-[100px]  before::left-[100px] before:h-1/2 before:rounded-br-2xl before:shadow-heroCardBigBefore before:w-full */
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  content: "";
+  top: 100%;
+  /* background: white; */
+  box-shadow: -15px 0 0 0 #ffffff;
+  right: 0%;
+  border-top-left-radius: 15px;
+}
