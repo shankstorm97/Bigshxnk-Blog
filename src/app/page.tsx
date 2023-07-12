@@ -59,7 +59,7 @@ export default async function Home() {
             alt="Blog-of-the-week-image"
             width={1200}
             height={1200}
-            className="rounded-2xl  hover:scale-110  duration-700 transition ease-in-out object-contain "
+            className="rounded-2xl  hover:scale-110 duration-700 transition ease-in-out object-contain "
           />
           <div className="absolute top-1/3 left-3/6 w-full">
             <h2
