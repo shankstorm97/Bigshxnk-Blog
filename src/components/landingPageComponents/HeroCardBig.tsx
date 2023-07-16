@@ -158,16 +158,16 @@ const HeroCardBig = () => {
             d="M3 346V111C3 105.477 7.47715 101 13 101H170C175.523 101 180 96.5229 180 91V66C180 60.4772 184.477 56 190 56H245C250.523 56 255 51.5229 255 46V13C255 7.47715 259.477 3 265 3H268H346C351.523 3 356 7.47715 356 13V179.5V346C356 351.523 351.523 356 346 356H13C7.47715 356 3 351.523 3 346Z"
             className="absolute top-0 left-0 z-10"
             stroke="black"
-            stroke-width="5"
+            stroke-width="2"
             ref={staggerRef1}
           />
-          <Image
+          {/* <Image
             src={Lamp}
             alt=""
             // height={1000}
             // width={1000}
             className="absolute top-0 left-0 z-0 h-16 w-16"
-          />
+          /> */}
         </svg>
       </div>
 
