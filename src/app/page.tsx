@@ -52,7 +52,7 @@ export default async function Home() {
           BLOG OF THE WEEK
         </h1>
       </div>
-      <div className="h-full w-full m-auto flex justify-center align-middle bg-gradient-to-b from-white to-neutral-300 hover:text-white text-neutral-900 rounded-b-sm">
+      <div className="h-full w-full m-auto flex justify-center align-middle bg-black hover:text-white text-neutral-900 rounded-b-sm">
         <div className="relative mb-36 h-full grayscale hover:grayscale-0 transition ease-in-out duration-500 overflow-hidden rounded-2xl">
           <Image
             src={`https:${coverImageUrl}`}
@@ -76,17 +76,7 @@ export default async function Home() {
       {/* {postItems.map((items: Entry) => {
         return <PostCard {...items} />;
       })} */}
-
-      {/* <div className="h-[64rem] w-full m-auto bg-gradient-to-b from-neutral-600 to-black"> */}
-      {/* <div className="max-w-[95%] bg-neutral-500 m-auto w-full h-full flex"> */}
-      {/* <div className="rounded-3xl max-w-7xl bg-slate-200 relative">
-            <h2 className="absolute top-2 text-3xl bg-orange-300 rounded-md w-3/4 h-fit ltr:text-left left-4 text-left line-clamp-3 tracking-wide">
-              {title}
-            </h2>
-          </div> */}
       <HeroCardBig />
-      {/* </div> */}
-      {/* </div> */}
     </>
   );
 }

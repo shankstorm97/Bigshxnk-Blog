@@ -32,50 +32,58 @@ const HeroCardBig = () => {
   const tagRef = useRef(null);
   const imageRef = useRef(null);
   const circleRef = useRef(null);
+  const rectangleRef = useRef(null);
+  const starRef = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
+  <svg
+    width="138"
+    height="164"
+    viewBox="0 0 138 164"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M94 9.99999C105 17 119.833 39 124 51H137V1H1.00001V3.99999C10.2 2.39999 -1.44243e-05 11 0.999986 16L1.00003 145C-0.199975 156.6 6.00001 160 1.00001 160V163H137V114H130C122 140 105 151.5 98 154C88.5 158.5 73.5 160.5 63 159C53.4 159 48.5 150 48 145V68H84C92 68.4 98 75.5 98 80V95H137V64L98 36V45C98.4 56.6 90 63.5 85 64H48V15.5C50 8.7 56.8333 5 60 3.99999C71.2 -7.15256e-06 87.1851 5.66325 94 9.99999Z"
+      stroke="black"
+    />
+  </svg>;
 
-  <svg
-    width="10"
-    height="11"
-    viewBox="0 0 10 11"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M1 9V5C1 4.44772 1.44772 4 2 4H4C4.55228 4 5 3.55228 5 3V2C5 1.44772 5.44772 1 6 1H8C8.55228 1 9 1.44772 9 2V9C9 9.55229 8.55228 10 8 10H2C1.44772 10 1 9.55229 1 9Z"
-      stroke="black"
-    />
-  </svg>;
-  <svg
-    width="359"
-    height="359"
-    viewBox="0 0 359 359"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M3 346V111C3 105.477 7.47715 101 13 101H170C175.523 101 180 96.5229 180 91V50C180 44.4772 184.477 40 190 40H245C250.523 40 255 35.5228 255 30V13C255 7.47715 259.477 3 265 3H268H346C351.523 3 356 7.47715 356 13V179.5V346C356 351.523 351.523 356 346 356H13C7.47715 356 3 351.523 3 346Z"
-      stroke="black"
-      stroke-width="5"
-    />
-  </svg>;
+  // const KuteTl = KUTE.to(staggerRef1.current, {});
 
   useEffect(() => {
     // const tl = gsap.timeline();
-    const timeline = anime.timeline({});
-    timeline.add({
-      targets: staggerRef1.current,
-      d: [
-        {
-          value:
-            "M3 346V111C3 105.477 7.47715 101 13 101H170C175.523 101 180 96.5229 180 91V50C180 44.4772 184.477 40 190 40H245C250.523 40 255 35.5228 255 30V13C255 7.47715 259.477 3 265 3H268H346C351.523 3 356 7.47715 356 13V179.5V346C356 351.523 351.523 356 346 356H13C7.47715 356 3 351.523 3 346Z",
-        },
-      ],
-      easing: "easeOutQuad",
-      duration: 1000,
-      loop: true,
-    });
+    var tween = KUTE.fromTo(
+      rectangleRef.current,
+      { path: starRef.current },
+      { path: rectangleRef.current }
+    ).start();
+    // tween();
+    // const timeline = anime.timeline({});
+    // timeline.add({
+    //   targets: staggerRef1.current,
+    //   d: [
+    //     {
+    //       value: "M26 29V1H14H1V18V37H3V42H15H26V35V29Z",
+    //     },
+    //   ],
+    //   easing: "easeInQuad",
+    //   duration: 2000,
+    // });
+
+    // timeline.add({
+    //   targets: circleRef.current,
+    //   translateX: -150,
+    //   duration: 4000,
+    //   easing: "easeInOutQuad",
+    // });
+    // timeline.add({
+    //   targets: circleRef.current,
+    //   translateY: -50,
+    //   translateX: -25,
+    //   duration: 4000,
+    //   easing: "easeInQuad",
+    // });
   }, []);
 
   return (
@@ -89,57 +97,15 @@ const HeroCardBig = () => {
         className="h-[100vh] w-full m-auto bg-white flex box-border max-w-[85%] mt-6 rounded-tl-2xl"
         ref={heroCardBigRef}
       >
-        <div
-          className="max-w-[100%] w-full bg-white h-2/3 basis-3/5 p-4 m-0 box-border overflow-hidden border-none"
-          // className="max-w-[100%] w-full bg-white h-2/3  p-4 m-0 box-border overflow-hidden border-none"
-          // ref={chasingClout}
-          // onMouseOver={scaleUp}
-          // onMouseLeave={scaleDown}
-        >
-          <div
-            className="relative h-[95%] w-[60%] bg-white box-border rounded-[15px] "
-            // ref={staggerRef}
-          >
+        <div className="max-w-[100%] w-full bg-white h-2/3 basis-3/5 p-4 m-0 box-border overflow-hidden border-none ">
+          <div className="relative h-[95%] w-[60%] bg-white box-border rounded-[15px] ">
             <Image
               src={Lamp}
               alt="lamp-image"
               width={1000}
-              // ref={imageRef}
               height={1000}
-              className="absolute top-0 h-full w-full rounded-[20px] hover:scale-110 duration-500 transition ease-in-out z-0"
+              className="h-full w-full  hover:scale-110 duration-500 transition ease-in-out clipper container"
             />
-            <div className="flex justify-start align-middle pr-4 pl-4 bg-white rounded-br-[15px] w-fit text-xl after:content-[''] after:absolute after:left-[100%] after:h-1/2 after:rounded-tl-2xl after:shadow-heroCardBigAfter after:w-full box-border after:z-40 h-fit min-w-[40%] absolute left-0 top-0 m-auto after:border-none z-20">
-              <div
-                className="flex justify-start align-bottom tracking-tight font-black"
-                style={vanillaRavioli.style}
-                ref={chasingClout}
-              >
-                Why everyone is chasing clout...
-              </div>
-            </div>
-            <div
-              // ref={heroCardBigRef}
-              className="flex justify-start align-middle z-10 pr-4 pl-4 bg-white rounded-br-[15px] w-fit text-lg after:content-[''] after:absolute after:left-[100%] after:h-1/2 after:rounded-tl-2xl after:shadow-heroCardBigAfter after:w-full box-border after:z-40 absolute top-7 h-fit  after:border-none"
-              // ref={tagRef}
-            >
-              <div
-                className="flex justify-start font-serif align-bottom font-black"
-                style={vanillaRavioli.style}
-              >
-                Prabhdeep singh
-              </div>
-            </div>
-            <div
-              // ref={heroCardBigRef}
-              className="flex justify-start align-middle z-10 pr-4 pl-4 bg-white rounded-br-[15px] w-fit text-md after:content-[''] after:absolute after:left-[100%] after:h-1/2 after:rounded-tl-2xl after:shadow-heroCardBigAfter after:w-full box-border after:z-40 h-fit absolute top-[3.5rem] beforeClass before:border-none after:border-none"
-            >
-              <div
-                className="flex justify-start align-bottom font-black"
-                style={vanillaRavioli.style}
-              >
-                Lifestyle
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -154,22 +120,48 @@ const HeroCardBig = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
+          {" "}
           <path
             d="M3 346V111C3 105.477 7.47715 101 13 101H170C175.523 101 180 96.5229 180 91V66C180 60.4772 184.477 56 190 56H245C250.523 56 255 51.5229 255 46V13C255 7.47715 259.477 3 265 3H268H346C351.523 3 356 7.47715 356 13V179.5V346C356 351.523 351.523 356 346 356H13C7.47715 356 3 351.523 3 346Z"
             className="absolute top-0 left-0 z-10"
             stroke="black"
-            stroke-width="2"
-            ref={staggerRef1}
+            stroke-width="0"
           />
-          {/* <Image
-            src={Lamp}
-            alt=""
-            // height={1000}
-            // width={1000}
-            className="absolute top-0 left-0 z-0 h-16 w-16"
-          /> */}
         </svg>
       </div>
+
+      <svg
+        width="138"
+        height="164"
+        viewBox="0 0 138 164"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M94 9.99999C105 17 119.833 39 124 51H130.5L119 1H1V3.99999C10.2 2.39999 16 11 17 16V145C15.8 156.6 6 160 1 160V163H126L137 114H130C122 140 105 151.5 98 154C88.5 158.5 73.5 160.5 63 159C53.4 159 48.5 150 48 145V68H84C92 68.4 98 75.5 98 80V95H102V36H98V45C98.4 56.6 90 63.5 85 64H48V15.5C50 8.7 56.8333 5 60 3.99999C71.2 -7.15256e-06 87.1851 5.66325 94 9.99999Z"
+          stroke="black"
+        />
+      </svg>
+
+      {/* cup svg  */}
+
+      <svg
+        height={400}
+        width={400}
+        id="morph-example"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 600 600"
+      >
+        <clipPath id="svgId">
+          <path
+            d="M171.956 14.8889C192.176 25.6914 219.444 59.642 227.103 78.1605H239.051L217.912 1H1V5.62962C17.9118 3.16047 28.5735 16.4321 30.4118 24.1481V223.222C28.2059 241.123 10.1912 246.37 1 246.37V251H230.779L251 175.383H238.132C223.426 215.506 192.176 233.253 179.309 237.111C161.846 244.056 134.272 247.142 114.971 244.827C97.3235 244.827 88.3162 230.938 87.3971 223.222V104.395H153.574C168.279 105.012 179.309 115.969 179.309 122.914V146.062H186.662V55.0123H179.309V68.9012C180.044 86.8025 164.603 97.4506 155.412 98.2222H87.3971V23.3765C91.0735 12.8827 103.635 7.17283 109.456 5.62962C130.044 -0.543221 159.429 8.19637 171.956 14.8889Z"
+            style={{ visibility: "hidden" }}
+            ref={starRef}
+            stroke="black"
+          />
+          <path d="M501 1H1V501H501V1Z" stroke="black" ref={rectangleRef} />
+        </clipPath>
+      </svg>
 
       <svg
         width="1512"
@@ -177,8 +169,14 @@ const HeroCardBig = () => {
         viewBox="0 0 1512 982"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="container"
       >
-        <g id="MacBook Pro 14&#34; - 1" clip-path="url(#clip0_1_2)">
+        <g
+          id="MacBook Pro 14&#34; - 1"
+          clip-path="url(#clip0_1_2)"
+          stroke="white"
+          fill="white"
+        >
           <rect width="1512" height="982" fill="white" stroke="white" />
           <g id="Ellipse 1" filter="url(#filter0_f_1_2)" ref={circleRef}>
             <circle cx="530" cy="452" r="40" fill="black" />

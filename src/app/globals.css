@@ -210,3 +210,6 @@ a {
   }
 }
 
+.clipper {
+  clip-path: url("#svgId");
+}
