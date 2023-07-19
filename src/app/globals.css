@@ -213,3 +213,26 @@ a {
 .clipper {
   clip-path: url("#svgId");
 }
+
+.main-div {
+  perspective: 1000px;
+}
+.first-div {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  /* transform: rotate3d(200deg); */
+  transform: rotateX(-30deg) rotateY(-25deg) rotateZ(10deg);
+}
+.first-div:hover {
+  transform: rotateX(-10deg) rotateY(-25deg) rotateZ(10deg);
+}
+.third-div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transform: rotateX(45deg);
+}
+
+.transformer {
+}
