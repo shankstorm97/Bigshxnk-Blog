@@ -38,8 +38,9 @@ const HeroCardBig = () => {
     // const tl = gsap.timeline();
     gsap.to(blastRef.current, {
       direction: "up",
-      translateX: 30,
-      duration: 3,
+      translateX: 40,
+      duration: 1,
+      rotation: 1,
     });
     // var tween = KUTE.fromTo(
     //   starRef.current,
@@ -197,7 +198,7 @@ const HeroCardBig = () => {
       </svg> */}
 
       <div
-        className=" h-[1200px] w-full flex justify-center align-middle main-div bg-red-500"
+        className=" h-[200px] w-full flex justify-center align-middle main-div bg-red-500 container mb-20"
         ref={blastRef}
       >
         {/* <div className="bg-red-100  first-div">first </div>
