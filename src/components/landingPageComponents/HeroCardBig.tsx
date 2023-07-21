@@ -37,8 +37,8 @@ const HeroCardBig = () => {
     console.log(window.innerWidth);
     // const tl = gsap.timeline();
     gsap.to(blastRef.current, {
-      direction: "up",
-      translateX: 40,
+      // direction: "up",
+      translateY: 112,
       duration: 1,
       rotation: 1,
     });
