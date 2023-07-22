@@ -57,7 +57,8 @@ function Header() {
           }}
         >
           <Link href="/" className={vanillaRavioli.className} ref={subscribe}>
-            SociousE
+            {/* SociousE */}
+            ELFAD
           </Link>
         </div>
         <div
