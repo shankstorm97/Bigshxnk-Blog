@@ -63,7 +63,7 @@ function Header() {
         </div>
         <div
           style={{
-            fontSize: 16,
+            fontSize: 20,
             flex: "1",
             display: "flex",
             alignItems: "center",
