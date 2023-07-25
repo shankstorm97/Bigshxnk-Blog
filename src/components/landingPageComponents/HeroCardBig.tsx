@@ -59,7 +59,7 @@ const HeroCardBig = () => {
 
   return (
     <>
-      <div className="m-auto flex justify-center text-7xl italic font-extralight w-full align-middle ">
+      <div className="m-auto flex justify-center text-7xl italic font-extralight w-full align-middle myColor ">
         <div className=" tracking-tight">Latest</div>
         <div className="text-sm ml-2 tracking-tighter">Category</div>
       </div>

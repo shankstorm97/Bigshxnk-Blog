@@ -53,11 +53,12 @@ function Header() {
             flex: "1",
             display: "flex",
             alignItems: "center",
+            // color: "#FF3928",
+            color: "#F4d35E",
             justifyContent: "center",
           }}
         >
           <Link href="/" className={vanillaRavioli.className} ref={subscribe}>
-            {/* SociousE */}
             ELFAD
           </Link>
         </div>
