@@ -50,8 +50,8 @@ export default async function Home() {
       <div className="landing-page flex justify-center align-middle">
         <h1
           className="lg:text-8xl text-center md:text-7xl sm:text-6xl xl:text-9xl xs:text-4xl xxs:text-2xl pt-2"
-          // style={{ color: "#FF3928" }}
-          style={{ color: "#F4d35E" }}
+          style={{ color: "#FF3928" }}
+          // style={{ color: "#F4d35E" }}
         >
           BLOG OF THE WEEK
         </h1>

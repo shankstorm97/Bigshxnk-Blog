@@ -53,8 +53,8 @@ function Header() {
             flex: "1",
             display: "flex",
             alignItems: "center",
-            // color: "#FF3928",
-            color: "#F4d35E",
+            color: "#FF3928",
+            // color: "#F4d35E",
             justifyContent: "center",
           }}
         >
