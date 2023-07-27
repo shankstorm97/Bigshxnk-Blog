@@ -61,8 +61,8 @@ export default async function Home() {
           <Image
             src={`https:${coverImageUrl}`}
             alt="Blog-of-the-week-image"
-            width={1200}
-            height={1200}
+            width={1500}
+            height={1500}
             className="rounded-2xl  hover:scale-110 duration-700 transition ease-in-out object-contain "
           />
           <div className="absolute top-1/3 left-3/6 w-full">
