@@ -10,6 +10,8 @@ import KUTE from "kute.js";
 import Lamp from "../../temp/Lamp.jpg";
 import Image from "next/image";
 import Carousel from "./Carousel";
+import Script from "next/script";
+import styles from "../../app/api/styles.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 const firaSans = Fira_Sans({
@@ -33,6 +35,7 @@ const HeroCardBig = () => {
   const blastRef = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
+
   useEffect(() => {
     console.log(window.innerWidth);
     // const tl = gsap.timeline();
@@ -47,6 +50,10 @@ const HeroCardBig = () => {
     //   { path: rectangleRef.current },
     //   { path: starRef.current }
     // ).start();
+    gsap.to(starRef.current, {
+      rotate: 2000,
+      duration: 100,
+    });
   }, []);
 
   const imgArray = [
@@ -206,6 +213,8 @@ const HeroCardBig = () => {
           Second{" "}
         </div>
         <div className="bg-red-300  third-div">Third</div> */}
+      </div>
+      <div className=" bg-black container m-auto noise">
       </div>
     </>
   );
