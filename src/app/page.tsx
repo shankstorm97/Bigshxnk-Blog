@@ -77,10 +77,6 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* {postItems.map((items: Entry) => {
-        return <PostCard {...items} />;
-      })} */}
-
       <HeroCardBig />
     </>
   );

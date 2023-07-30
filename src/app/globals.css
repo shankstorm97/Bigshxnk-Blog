@@ -249,8 +249,8 @@ a {
   pointer-events: none;
   z-index: 99999;
   overflow: hidden;
-  width: 1002px;
-  height: 1002px;
+  width: 100vw;
+  height: 100vh;
 }
 
 @keyframes noise {
@@ -312,5 +312,5 @@ a {
   height: 200%;
   left: -50%;
   top: -50%;
-  opacity: 0.8;
+  opacity: 0.3;
 }
