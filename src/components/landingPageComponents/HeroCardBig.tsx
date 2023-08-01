@@ -215,7 +215,12 @@ const HeroCardBig = () => {
         <div className="bg-red-300  third-div">Third</div> */}
       </div>
       <div className=" bg-white m-auto noise">
-        <h6 className=" text-black">Oppeheimerm might be in trouble.</h6>
+        <h6 className=" text-black">
+          Oppenheimer may get into trouble. Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Illum pariatur mollitia exercitationem
+          recusandae totam fugiat laudantium, qui aliquid ratione sunt et
+          deleniti ipsa porro modi aut! Optio est dolore impedit!
+        </h6>
       </div>
     </>
   );
